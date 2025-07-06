@@ -1,0 +1,26 @@
+@use 'variables';
+
+.button{
+    width: 360px;
+    font-size: 22px;
+    text-decoration: none;
+    color: variables.$color-white;
+    display: flex;
+
+    justify-content: center;
+    // align-items: center;
+    padding: 15px 0px;
+    border-radius: 15px;
+    margin: 0 auto;
+    
+    
+    max-width: calc(100% - (2 * 20px));
+
+    &--red {
+        background-color: variables.$color-button-red;
+    }
+    &--black {
+        background-color: variables.$color-black;
+    }
+
+}

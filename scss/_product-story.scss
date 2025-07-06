@@ -1,0 +1,114 @@
+@use 'responsive'; // Assuming your responsive breakpoints are here
+@use 'variables';  // Assuming your color variables are here
+
+.product-story {
+    background-color: variables.$color-white; 
+    padding: 0 17px 0 16px;
+        .product-story__content-wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px; 
+            margin: 0 auto; 
+            position: relative;
+            .product-story__section-title{
+                font-size: 48px;
+                font-weight: 800;
+                text-align: center;
+                text-transform: lowercase;
+                margin: 30px 0px 50px;
+            }
+
+            .product-story__content-block{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                max-width: 260px;
+                margin-bottom: 20px;
+                position: relative;
+
+                .product-story__item-title-box{
+                    display: flex;
+                    flex-direction: column;
+                    
+                    .product-story__icon{
+                        margin-bottom: 10px; //some SVG icons have their own padding (for example the second one). Therefore I could align them perfectly. So if I set margin-bottom for icons 20px and then the image has its own padding-bottom the overall space between icon and product-story__title becomes bigger.
+                        width: auto;
+                        height: auto;
+
+                        svg{
+                            width: 36px;
+                            height: 48px;
+                        }
+                    }
+                    .product-story__title{
+                       font-size: 14px;
+                       font-weight: 600;
+                       margin: 0;
+                    }
+                }
+                .product-story__description{}
+            }
+
+            .product-story__content-block--left{
+                align-self: flex-start;
+                text-align: left;
+
+                .product-story__item-title-box{
+                    align-items: flex-start;
+                }
+            }
+            
+            .product-story__content-block--right{
+                    align-self: flex-end; 
+                    text-align: right;
+
+                .product-story__item-title-box{
+                    align-items: flex-end;
+
+                    .product-story__icon{}
+                    .product-story__title{}
+                }
+                .product-story__description{}
+                
+            }
+
+            .flow-arrow{
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: -15px;
+                margin-top: -15px;
+                flex-shrink: 0;
+            }
+            .flow-arrow--down-left{
+                align-self: flex-end;
+            }
+            .flow-arrow--down-right{
+                align-self: flex-start; 
+            }
+            .product-story__allergen-info{
+                display: flex;
+                flex-wrap: wrap;
+                column-gap: 38px;
+                justify-content: flex-start;
+                margin-bottom: 25px;
+                .product-story__content-box{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 25px;
+                    text-align: center;
+                    flex: 0 0 calc(25% - (3 * 38px / 4));
+                    .product-story__allergen-icon{
+                        margin-bottom: 10px;
+                    }
+                    .product-story__allergen-name{
+                        display: block;
+                        word-break: break-word;
+                    }
+                }
+            }
+        }
+
+}
+

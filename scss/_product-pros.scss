@@ -1,0 +1,30 @@
+@use 'responsive';
+@use 'variables';
+
+.product-pros{
+    .product-pros__title{
+        text-align: center;
+        padding: 40px 36px 40px 17px;
+        margin: 0;
+    }
+    .product-pros__content-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 0px 16px 40px 17px;
+
+        .product-pros__image-text-box{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+
+            .product-pros__text{
+                margin: 0;
+            }
+            .product-pros__text-highlight{
+                font-weight: 600;
+            }
+        }
+    } 
+}

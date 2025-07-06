@@ -1,0 +1,183 @@
+@use 'responsive';
+@use 'variables';
+
+
+.product-details {
+    background-color: variables.$color-product-details-bc;
+
+    .product-details__content-wrapper {
+        .product-details__header {
+            padding-top: 35px;
+            text-align: center;
+
+            .product-details__title {
+                font-size: 50px;
+                font-weight: 800;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                max-width: fit-content;
+                line-height: 1.1;
+
+                .product-details__title--red {
+                    color: #D20032;
+                    margin: 0;
+                    padding: 0;
+                }
+                .product-details__title--black {
+                    display: block;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+
+            .product-details__tagline {
+                font-size: 22px;
+                font-weight: 600;
+                margin: 20px 0px 20px 0px;
+            }
+
+            .product-details__description {
+                max-width: 320px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .product-details__ingredients-title {
+                margin-bottom: 0;
+                text-align: center;
+                font-weight: 400;
+                font-size: 14px;
+                margin-top: 31px;
+            }
+        }
+
+        #organicIngredientsCarousel {
+            margin-top: 0;
+            margin-bottom: 0;
+
+            .carousel-inner {
+                margin-top: 31px;
+                margin-bottom: 45px;
+            }
+
+            .carousel-item {
+                text-align: center; 
+            }
+
+            .ingredients-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 34px;
+                row-gap: 15px;
+                max-width: 258px;
+                margin: 0 auto;
+            }
+
+            .ingredient-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                border: 1px solid lime;
+
+                // Targeting SVG directly for the first slide's images
+                svg {
+                    width: 112px; 
+                    height: 121px;
+                    object-fit: contain;
+                    margin-bottom: 3px;
+                }
+
+                img {
+                    width: 112px;
+                    height: 121px;
+                    object-fit: contain;
+                    margin-bottom: 3px;
+                }
+
+                p {
+                    font-size: 14px;
+                    color: variables.$color-black;
+                    text-transform: lowercase;
+                    margin: 0;
+                }
+            }
+
+            .product-details__carousel-navigation-wrapper{
+                display: flex; 
+                justify-content: center; 
+                align-items: center;
+                gap: 20px;
+                width: 100%; 
+                padding: 0 20px;
+                margin-bottom: 30px;
+            }
+
+            .carousel-indicators {
+                position: static;
+                margin: 0 10px;
+
+                button {
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background-color: transparent;
+                    border: 1px solid variables.$color-black;
+                    opacity: 1;
+                    margin: 0 6px;
+                    transition: background-color 0.3s ease;
+
+                    &.active {
+                        background-color: variables.$color-black;
+                    }
+                }
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                position: static;
+                width: 40px;
+                height: 40px;
+                background: transparent;
+                opacity: 1;
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+
+                .carousel-control-prev-icon,
+                .carousel-control-next-icon {
+                    width: 24px;
+                    height: 24px;
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    filter: none;
+                }
+            }
+
+            .carousel-control-prev {
+                .carousel-control-prev-icon {
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11.5 14.5L5 8l6.5-6.5'/%3E%3C/svg%3E");
+                }
+            }
+
+            .carousel-control-next {
+                .carousel-control-next-icon {
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4.5 14.5l6.5-6.5L4.5 1.5'/%3E%3C/svg%3E");
+                }
+            }
+        }
+
+
+        .product-details__cta {
+            .product-details__link{
+                
+            }
+        }
+    }
+}

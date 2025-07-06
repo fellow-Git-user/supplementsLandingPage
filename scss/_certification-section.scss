@@ -1,0 +1,23 @@
+@use 'responsive';
+@use 'variables';
+
+.certification{
+    background-color: variables.$color-gray;
+
+    .certification__content-wrapper{
+        text-align: center;
+        padding: 40px;
+
+        .certification__image-text-box{
+            
+            .certification__image{
+                height: 133px;
+                width: 133px;
+            }
+            .certification__text{
+                padding-top: 30px;
+                margin: 0;
+            }
+        }
+    }
+}

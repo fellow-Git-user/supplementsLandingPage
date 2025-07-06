@@ -1,0 +1,35 @@
+@use 'responsive';
+@use 'variables';
+
+
+.benefits{
+    
+    .benefits__items-wrapper{
+        width: 100%;
+        padding: 30px 17px;
+        gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-around;
+
+        .benefits__single-item{
+            width: calc(50% - 10px);
+            text-align: center;
+            background-color: variables.$color-benefits-bc;        
+            padding-top: 15px;
+            border-radius: 15px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .benefits__title{
+                font-size: 14px;
+                margin: 0;
+                padding: 5px 0px 14px 0px;
+            }
+        }
+    }
+}

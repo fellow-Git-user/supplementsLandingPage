@@ -1,0 +1,56 @@
+@use 'responsive';
+@use 'variables';
+
+
+
+.invitation-to-subscribe{
+    width: 100%;
+    font-size: 14px;
+    color: variables.$color-white;
+    background-color: variables.$color-black;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+    .invitation-to-subscribe__content-wrapper{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 63px 0px 63px 18px;
+        gap: 30px;
+
+        .invitation-to-subscribe__image-text-box{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 24px;
+
+            .invitation-to-subscribe__image{
+                flex-shrink: 0;
+            }
+
+            .invitation-to-subscribe__text{
+                margin: 0;
+                flex-grow: 1;
+            }
+        }
+    } 
+
+    .invitation-to-subscribe__subscribe-save-box{
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        padding-right: 13px;
+
+        .invitation-to-subscribe__subscribe-save{
+            writing-mode: sideways-lr;
+            text-orientation: mixed;
+            margin: 0;
+            font-size: 22px;
+            font-weight: 600;  
+            white-space: nowrap;
+        }
+    }
+}
