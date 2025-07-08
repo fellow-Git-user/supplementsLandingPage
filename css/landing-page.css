@@ -46,15 +46,96 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  padding: 0 17px;
+}
+@media (min-width: 772px) {
+  .logo-navbar {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0;
+  }
+}
+.logo-navbar .desktop-nav {
+  display: none;
+}
+@media (min-width: 772px) {
+  .logo-navbar .desktop-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-right: auto;
+    padding-left: 38px;
+  }
+  .logo-navbar .desktop-nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 24px;
+  }
+  .logo-navbar .desktop-nav .desktop-nav__link {
+    text-decoration: none;
+    color: #0B0A0C;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .logo-navbar .desktop-nav .desktop-nav__link:hover {
+    text-decoration: underline;
+  }
 }
 .logo-navbar .logo-navbar__icon {
-  margin: 16px 0 23px 17px;
+  cursor: pointer;
+  z-index: 1001;
+  display: block;
+}
+@media (min-width: 772px) {
+  .logo-navbar .logo-navbar__icon {
+    display: none;
+  }
+}
+.logo-navbar .logo-navbar__icon.is-active svg rect:nth-child(1) {
+  -webkit-transform: translateY(6px) rotate(45deg);
+          transform: translateY(6px) rotate(45deg);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+.logo-navbar .logo-navbar__icon.is-active svg rect:nth-child(2) {
+  opacity: 0;
+}
+.logo-navbar .logo-navbar__icon.is-active svg rect:nth-child(3) {
+  -webkit-transform: translateY(-6px) rotate(-45deg);
+          transform: translateY(-6px) rotate(-45deg);
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
 .logo-navbar .logo-navbar__title {
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  margin: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 2;
   font-weight: 700;
   font-size: 19px;
+}
+@media (min-width: 772px) {
+  .logo-navbar .logo-navbar__title {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    z-index: 1;
+  }
 }
 .logo-navbar .logo-navbar__title .logo-navbar__link {
   text-decoration: none;
@@ -62,6 +143,68 @@ p {
 }
 .logo-navbar .logo-navbar__title .logo-navbar__link h1 {
   margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  text-align: center;
+}
+@media (min-width: 772px) {
+  .logo-navbar .logo-navbar__title .logo-navbar__link h1 {
+    font-size: 32px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+.logo-navbar .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  background-color: white;
+  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  -webkit-transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  z-index: 1000;
+  display: none;
+}
+.logo-navbar .dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  padding: 0px 0;
+}
+.logo-navbar .dropdown-menu li {
+  margin-bottom: 15px;
+}
+.logo-navbar .dropdown-menu li:last-child {
+  margin-bottom: 0;
+}
+.logo-navbar .dropdown-menu .dropdown-menu__link {
+  display: block;
+  padding: 0px 20px;
+  text-decoration: none;
+  color: #0B0A0C;
+  text-align: left;
+  font-size: 16px;
+}
+.logo-navbar .dropdown-menu .dropdown-menu__link:hover {
+  background-color: #f1f1f1;
+}
+.logo-navbar .dropdown-menu.is-active {
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  display: block;
+}
+@media (min-width: 772px) {
+  .logo-navbar .dropdown-menu {
+    display: none;
+  }
 }
 
 .hero-section {

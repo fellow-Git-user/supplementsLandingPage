@@ -7,24 +7,150 @@
     height: 52px;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    padding: 0 17px;
+        @include responsive.md{
+            justify-content: space-between;
+            padding: 0;
+        }
+
+    .desktop-nav {
+        display: none;
+
+        @include responsive.md {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-right: auto;
+            padding-left: 38px;
+            ul {
+                display: flex;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                gap: 24px;
+            }
+            .desktop-nav__link {
+                text-decoration: none;
+                color: #0B0A0C;
+                font-size: 16px;
+                font-weight: 500;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        @include responsive.lg{
+            
+        }
+    }
 
     .logo-navbar__icon{
-        margin: 16px 0 23px 17px;
+        cursor: pointer;
+        z-index: 1001;
+        display: block;
+            @include responsive.md{
+            display: none;
+            }
+            
+            &.is-active{
+                svg {
+                rect:nth-child(1) {
+                    transform: translateY(6px) rotate(45deg);
+                    transform-origin: center;
+                }
+                rect:nth-child(2) {
+                    opacity: 0;
+                }
+                rect:nth-child(3) {
+                    transform: translateY(-6px) rotate(-45deg);
+                    transform-origin: center;
+                }
+            }
+        }
     }
 
     
     .logo-navbar__title{
-        margin-left: auto;
-        margin-right: auto;
+        position: absolute;
+        margin: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
         font-weight: 700;
         font-size: 19px;
+            @include responsive.md{
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1;
+            }
 
         .logo-navbar__link{
             text-decoration: none;
             color: variables.$color-black;
             & h1 {
                 margin: 0;
+                font-size: 19px;
+                font-weight: 700;
+                text-align: center;
+                @include responsive.md{
+                    font-size: 32px;
+                    margin-right: auto;
+                    margin-left: auto;
+                }
             }
         }
     } 
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: fit-content;
+        max-height: 0;
+        overflow: hidden;
+        background-color: white;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        z-index: 1000;
+        display: none;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            padding: 0px 0; // Padding inside the dropdown content
+        }
+
+        li {
+            margin-bottom: 15px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .dropdown-menu__link {
+            display: block;
+            padding: 0px 20px;
+            text-decoration: none;
+            color: #0B0A0C;
+            text-align: left;
+            font-size: 16px; // Larger font for mobile menu links
+
+            &:hover {
+                background-color: #f1f1f1;
+            }
+        }
+
+        
+        &.is-active {
+            max-height: fit-content;
+            display: block;
+        }
+
+        @include responsive.md {
+            display: none;
+        }
+    }
 }
