@@ -9,6 +9,11 @@
     background-size: cover;
     position: relative;
     padding-bottom: 150%;
+    @include responsive.lg{
+        padding-bottom: 0;
+        height: 700px;
+        background-position: top;
+    }
     
     .hero-section__content-wrapper {
         position: absolute;
@@ -38,10 +43,13 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
+
+            @include responsive.md{
+                bottom: 135px;
+            }
+            @include responsive.lg{
+                bottom: 25px;
+            }
         }
     }
 }
-// class="">
-// class="hero-section__image">
-// class="hero-section__header"
-// class="hero-section__link"

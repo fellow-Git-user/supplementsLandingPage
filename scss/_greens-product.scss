@@ -1,0 +1,112 @@
+@use 'variables';
+@use 'responsive';
+
+.greens-product{
+
+    background-color: variables.$color-greens-product-bc;
+    .greens-product__content-wrapper{
+        padding: 37px 16px 40px 17px;
+            @include responsive.lg{
+                max-width: 938px;
+                margin-left: auto;
+                margin-right: auto;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto auto;
+                grid-template-areas: 
+                "photo-area title-area"
+                "photo-area text-area"
+                "photo-area button-area";
+                gap: 33px 27px;
+                padding: 40px 0;
+            }
+        .greens-product__title{
+            margin-left: auto;
+            margin-right: auto;
+            width: 169px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            line-height: 0.8;
+                @include responsive.md{
+                    font-size: 16px;
+                }
+                @include responsive.lg{
+                    grid-area: title-area;
+                    width: 130px;
+                    margin: 0;
+                    margin-top: 30px;
+                    text-align: left;
+                }
+            .greens-product__title--emphasis{
+                color: #12A637;
+                font-size: 50px;
+                font-weight: 800;
+            }
+        }
+        .greens-product__text{
+            text-align: center;
+            margin-bottom: 40px;
+            @include responsive.md{
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            @include responsive.lg{
+                grid-area: text-area;
+                max-width: none;
+                margin: 0;
+                text-align: left;
+            }
+        }
+        .greens-product__image{
+            width: 100%;
+            margin-bottom: 40px;
+                @include responsive.lg{
+                    grid-area: photo-area;
+                    margin: 0;
+                    align-self: center;
+                }
+            
+            img{
+                width: 100%;
+                height: 333px;
+                border-radius: 15px;
+                object-fit: cover;
+                display: block;
+                margin: 0 auto;
+
+                @include responsive.md{
+                    width: 360px;
+                    height: 333px;
+                    object-fit: cover;
+                }
+                @include responsive.lg{
+                    display: block;
+                    width: 454px;
+                    border-radius: 0px;
+                }
+            }
+        }
+        .greens-product__cta{
+            @include responsive.lg{
+                    grid-area: button-area;
+                    text-align: left;
+                    margin-top: 20px;
+                }
+            .greens-product__link{
+                max-width: 100%;
+                @include responsive.lg{
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+

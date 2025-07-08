@@ -11,6 +11,10 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;
+        @include responsive.md {
+            flex-direction: column;
+            padding: 40px 0px 36px 0px;
+        }
 
     .invitation-to-subscribe__content-wrapper{
         flex-grow: 1;
@@ -18,12 +22,25 @@
         flex-direction: column;
         padding: 63px 0px 63px 18px;
         gap: 30px;
+            @include responsive.md {
+                flex-direction: row;
+                gap: 92px;
+                justify-content: center;
+                padding: 35px 0px 0px 0px;
+            }
 
         .invitation-to-subscribe__image-text-box{
             display: flex;
             justify-content: flex-start;
             align-items: center;
             gap: 24px;
+                @include responsive.md {
+                    text-align: center;
+                    flex-direction: column;
+                    gap: 15px;
+                    max-width: 128px;
+
+                }
 
             .invitation-to-subscribe__image{
                 flex-shrink: 0;
@@ -44,6 +61,10 @@
         flex-shrink: 0;
         padding-right: 13px;
 
+            @include responsive.md {
+                order: -1;
+            }
+
         .invitation-to-subscribe__subscribe-save{
             writing-mode: sideways-lr;
             text-orientation: mixed;
@@ -51,6 +72,11 @@
             font-size: 22px;
             font-weight: 600;  
             white-space: nowrap;
+
+            @include responsive.md {
+                writing-mode: horizontal-tb;
+
+            }
         }
     }
 }

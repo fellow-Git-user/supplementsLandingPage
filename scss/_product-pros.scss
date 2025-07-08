@@ -2,16 +2,39 @@
 @use 'variables';
 
 .product-pros{
+    padding: 40px 17px 0 16px;
+    
+    
     .product-pros__title{
+        max-width: 519px;
         text-align: center;
-        padding: 40px 36px 40px 17px;
-        margin: 0;
+        padding: 0 36px 40px 17px;
+        margin: 0 auto;
+        @include responsive.lg{
+            max-width: none;
+        }
     }
     .product-pros__content-wrapper{
         display: flex;
         flex-direction: column;
+        max-width: 100%; 
+        margin: 0 auto;
         gap: 30px;
         padding: 0px 16px 40px 17px;
+
+        @include responsive.md  {
+            padding: 0px 120px 40px 120px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            row-gap: 40px;
+            column-gap: 34px;
+        }
+        @include responsive.lg{
+            max-width: 927px;
+            padding-left: 0;
+            padding-right: 0;
+        }
 
         .product-pros__image-text-box{
             display: flex;
@@ -19,11 +42,61 @@
             align-items: center;
             gap: 20px;
 
+            @include responsive.md  {
+                width: calc(100% / 2 - 20px);
+                flex-direction: row;
+                column-gap: 21px;
+                    &:nth-child(1){
+                        order: 6;
+                    }
+                    &:nth-child(2){
+                        order: 2;
+                    }
+                    &:nth-child(3){
+                        order: 1;
+                    }
+                    &:nth-child(4){
+                        order: 4;
+                    }
+                    &:nth-child(5){
+                        order: 5;
+                    }
+                    &:nth-child(6){
+                        order: 3;
+                    }
+            }
+            @include responsive.lg{
+                width: calc(100% / 3 - (2 * 34px / 3));
+                flex-direction: row;
+                max-width: none;
+                justify-content: center;
+                &:nth-child(4){
+                        order: 3;
+                }
+                &:nth-child(6){
+                    order: 4;
+                }
+                
+            }
+
+
             .product-pros__text{
                 margin: 0;
+                @include responsive.md  {
+                    max-width: 161px;
+                }
             }
             .product-pros__text-highlight{
                 font-weight: 600;
+            }
+
+            svg{
+
+                @include responsive.md  {
+                    width: 37px;
+                    height: 37px;
+
+                }
             }
         }
     } 

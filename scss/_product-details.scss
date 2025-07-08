@@ -6,11 +6,26 @@
     background-color: variables.$color-product-details-bc;
 
     .product-details__content-wrapper {
-        .product-details__header {
-            padding-top: 35px;
-            text-align: center;
+        padding-bottom: 40px;
+        padding-top: 35px;
 
-            .product-details__title {
+            @include responsive.md {
+                padding-bottom: 80px;
+                }
+            @include responsive.lg {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas:
+                    "title title"         
+                    "left-content right-content"
+                    "nav nav";
+                gap: 0px 102px;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 40px 20px;
+            }
+
+            .product-details__section-title {
                 font-size: 50px;
                 font-weight: 800;
                 margin: 0 auto;
@@ -18,6 +33,11 @@
                 flex-direction: column;
                 max-width: fit-content;
                 line-height: 1.1;
+                text-align: center;
+                    @include responsive.lg{
+                    grid-area: title;
+                    margin: 0 auto 30px auto;
+                }
 
                 .product-details__title--red {
                     color: #D20032;
@@ -29,6 +49,16 @@
                     margin: 0;
                     padding: 0;
                 }
+            }
+
+        .product-details__content-box {
+            
+            text-align: center;
+            @include responsive.lg{
+                grid-area: left-content;
+                text-align: left;
+                align-self: center;
+                
             }
 
             .product-details__tagline {
@@ -43,6 +73,14 @@
                 margin-bottom: 20px;
                 margin-left: auto;
                 margin-right: auto;
+
+                @include responsive.md {
+                    max-width: 500px;
+                }
+                @include responsive.lg{
+                    max-width: none;
+                    text-align: left;
+                }
             }
 
             .product-details__ingredients-title {
@@ -51,20 +89,39 @@
                 font-weight: 400;
                 font-size: 14px;
                 margin-top: 31px;
+                    @include responsive.md{
+                        font-size: 16px;
+                    }
+                    @include responsive.lg{
+                        text-align: left;
+                    }
             }
         }
 
         #organicIngredientsCarousel {
             margin-top: 0;
             margin-bottom: 0;
+                @include responsive.lg{
+                    grid-area: right-content;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
 
             .carousel-inner {
                 margin-top: 31px;
                 margin-bottom: 45px;
+                    @include responsive.md{
+                        margin-bottom: 55px;
+                    }
+                    @include responsive.lg{
+                        width: 100%; 
+                        margin-top: 0;
+                        margin-bottom: 0;
+                    }
             }
 
             .carousel-item {
-                text-align: center; 
+                text-align: center;
             }
 
             .ingredients-grid {
@@ -72,7 +129,7 @@
                 grid-template-columns: repeat(2, 1fr);
                 column-gap: 34px;
                 row-gap: 15px;
-                max-width: 258px;
+                max-width: 260px;
                 margin: 0 auto;
             }
 
@@ -81,9 +138,7 @@
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-                border: 1px solid lime;
-
-                // Targeting SVG directly for the first slide's images
+                
                 svg {
                     width: 112px; 
                     height: 121px;
@@ -103,81 +158,104 @@
                     color: variables.$color-black;
                     text-transform: lowercase;
                     margin: 0;
-                }
-            }
-
-            .product-details__carousel-navigation-wrapper{
-                display: flex; 
-                justify-content: center; 
-                align-items: center;
-                gap: 20px;
-                width: 100%; 
-                padding: 0 20px;
-                margin-bottom: 30px;
-            }
-
-            .carousel-indicators {
-                position: static;
-                margin: 0 10px;
-
-                button {
-                    width: 12px;
-                    height: 12px;
-                    border-radius: 50%;
-                    background-color: transparent;
-                    border: 1px solid variables.$color-black;
-                    opacity: 1;
-                    margin: 0 6px;
-                    transition: background-color 0.3s ease;
-
-                    &.active {
-                        background-color: variables.$color-black;
+                    @include responsive.md{
+                        font-size: 16px;
                     }
                 }
             }
-
-            .carousel-control-prev,
-            .carousel-control-next {
-                position: static;
-                width: 40px;
-                height: 40px;
-                background: transparent;
-                opacity: 1;
-                border: none;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0;
-
-                .carousel-control-prev-icon,
-                .carousel-control-next-icon {
-                    width: 24px;
-                    height: 24px;
-                    background-size: 100% 100%;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    filter: none;
-                }
-            }
-
-            .carousel-control-prev {
-                .carousel-control-prev-icon {
-                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11.5 14.5L5 8l6.5-6.5'/%3E%3C/svg%3E");
-                }
-            }
-
-            .carousel-control-next {
-                .carousel-control-next-icon {
-                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4.5 14.5l6.5-6.5L4.5 1.5'/%3E%3C/svg%3E");
-                }
-            }
         }
+            .product-details__bottom-section{
 
+                @include responsive.lg{
+                    grid-area: nav;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 30px;
+                    margin-top: 40px;
+                }
+                .product-details__carousel-navigation-wrapper{
+                    display: flex; 
+                    justify-content: center; 
+                    align-items: center;
+                    gap: 20px;
+                    width: 100%; 
+                    padding: 0 20px;
+                    margin-bottom: 33px;
+                    @include responsive.lg{
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 20px;
+                        padding: 0 20px;
+                        margin-top: 0px; 
+                        margin-bottom: 0px;
+                    }
+                    .carousel-indicators {
+                    position: static;
+                    margin: 0 10px;
 
-        .product-details__cta {
+                    button {
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        background-color: transparent;
+                        border: 1px solid variables.$color-black;
+                        opacity: 1;
+                        margin: 0 6px;
+                        transition: background-color 0.3s ease;
+
+                        &.active {
+                            background-color: variables.$color-black;
+                        }
+                    }
+                }
+
+                .carousel-control-prev,
+                .carousel-control-next {
+                    position: static;
+                    width: 40px;
+                    height: 40px;
+                    background: transparent;
+                    opacity: 1;
+                    border: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0;
+
+                    .carousel-control-prev-icon,
+                    .carousel-control-next-icon {
+                        width: 24px;
+                        height: 24px;
+                        background-size: 100% 100%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        filter: none;
+                    }
+                }
+
+                    .carousel-control-prev {
+                        .carousel-control-prev-icon {
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11.5 14.5L5 8l6.5-6.5'/%3E%3C/svg%3E");
+                        }
+                    }
+
+                    .carousel-control-next {
+                        .carousel-control-next-icon {
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4.5 14.5l6.5-6.5L4.5 1.5'/%3E%3C/svg%3E");
+                        }
+                    }
+                }
+
+            }
+            .product-details__cta {
+            @include responsive.lg{
+            }
             .product-details__link{
                 
             }
-        }
+        } 
     }
 }

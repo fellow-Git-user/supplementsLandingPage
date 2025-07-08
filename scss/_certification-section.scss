@@ -7,9 +7,18 @@
     .certification__content-wrapper{
         text-align: center;
         padding: 40px;
+        
+        @include responsive.md  {
+        padding: 25px 0;
+        }
 
         .certification__image-text-box{
-            
+                @include responsive.md  {
+                display: flex;
+                gap: 45px;
+                justify-content: center;
+                align-items: center;
+            }
             .certification__image{
                 height: 133px;
                 width: 133px;
@@ -17,6 +26,11 @@
             .certification__text{
                 padding-top: 30px;
                 margin: 0;
+
+                @include responsive.md  {
+                    max-width: 351px;
+                    padding-top: 0;
+                }
             }
         }
     }
