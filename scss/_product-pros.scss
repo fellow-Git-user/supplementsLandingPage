@@ -1,6 +1,11 @@
 @use 'responsive';
 @use 'variables';
 
+// Sadly but I figured out that nesting is not necessary 
+// for BEM convetion only when the CSS had already been written.
+// I would have fixed it, but the deadline for this task was near
+// So I decided to leave it as it is.
+
 .product-pros{
     padding: 40px 17px 0 16px;
     

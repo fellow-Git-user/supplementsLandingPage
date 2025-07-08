@@ -93,6 +93,15 @@ p {
     text-decoration: underline;
   }
 }
+@media (min-width: 950px) {
+  .logo-navbar .desktop-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: auto;
+    padding-left: 0;
+  }
+}
 .logo-navbar .logo-navbar__icon {
   cursor: pointer;
   z-index: 1001;
