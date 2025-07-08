@@ -91,7 +91,9 @@
             }
 
             svg{
-
+                :hover{
+                    fill: variables.$color-icons-fill;
+                }
                 @include responsive.md  {
                     width: 37px;
                     height: 37px;
